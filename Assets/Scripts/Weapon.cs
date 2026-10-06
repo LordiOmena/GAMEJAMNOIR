@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Weapon : MonoBehaviour
 {
@@ -8,13 +9,15 @@ public class Weapon : MonoBehaviour
     public float fireForce = 20f;
     public float time;
     public float reloadTime = 20f;
+    public bool isReloading = false;
+    public float reloadingTime = 0f;
     public int bulletAmount;
     public int maxBulletAmount = 10;
     public TextMeshProUGUI bulletAmountText;
 
     void Start()
     {
-        Reloaded();
+
     }
     void Update()
     {
@@ -24,7 +27,7 @@ public class Weapon : MonoBehaviour
         }
         bulletAmountText.text = bulletAmount.ToString();
 
-        if(time > reloadTime && bulletAmount > 0 )
+        if(time > reloadTime && bulletAmount > 0 && isReloading == false)
         {
             if(Input.GetMouseButton(0))
             {   
@@ -45,8 +48,17 @@ public class Weapon : MonoBehaviour
         rb.AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
     }
 
+    IEnumerator ReloadingRoutine()
+    {
+        isReloading = true;
+
+        yield return new WaitForSeconds(reloadingTime);
+
+        isReloading = false;
+    }
     public void Reloaded()
     {
+        StartCoroutine(ReloadingRoutine());
         bulletAmount = maxBulletAmount;
         bulletAmountText.text = bulletAmount.ToString();
     }
