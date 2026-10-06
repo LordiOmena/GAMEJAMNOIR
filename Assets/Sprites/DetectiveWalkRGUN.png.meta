@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 1d7ca27ce9b64c94bb849f113a6db21c
+guid: 8a24bee951e103a4a997da67f5d5290e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7841325508271848504
-    second: DetectiveShoot_0
+      213: -4789691304671640713
+    second: DetectiveWalkRGUN_0
   - first:
-      213: 6808201019076005894
-    second: DetectiveShoot_1
+      213: 2469402468469858495
+    second: DetectiveWalkRGUN_1
+  - first:
+      213: 6454139896338329762
+    second: DetectiveWalkRGUN_2
+  - first:
+      213: 3216598729831153203
+    second: DetectiveWalkRGUN_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DetectiveShoot_0
+      name: DetectiveWalkRGUN_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 230
-        width: 230
-        height: 230
+        y: 24
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83cb0c0310cf1dc60800000000000000
-      internalID: 7841325508271848504
+      spriteID: 7730541a229978db0800000000000000
+      internalID: -4789691304671640713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveShoot_1
+      name: DetectiveWalkRGUN_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 230
-        height: 230
+        x: 24
+        y: 24
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +146,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6005a7561c69b7e50800000000000000
-      internalID: 6808201019076005894
+      spriteID: fb06e9c2674154220800000000000000
+      internalID: 2469402468469858495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DetectiveWalkRGUN_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a03ceb4a06b19950800000000000000
+      internalID: 6454139896338329762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DetectiveWalkRGUN_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33efe84a087a3ac20800000000000000
+      internalID: 3216598729831153203
       vertices: []
       indices: 
       edges: []
@@ -150,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e56fa83210630e24884998ef67a8d1d5
+    spriteID: 4a54aa46b3778aa43b502c5a7c3a42d0
     internalID: 0
     vertices: []
     indices: 
@@ -160,10 +210,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":230.0,"y":230.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":24.0,"y":24.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      DetectiveShoot_0: 7841325508271848504
-      DetectiveShoot_1: 6808201019076005894
+      DetectiveWalkRGUN_0: -4789691304671640713
+      DetectiveWalkRGUN_1: 2469402468469858495
+      DetectiveWalkRGUN_2: 6454139896338329762
+      DetectiveWalkRGUN_3: 3216598729831153203
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

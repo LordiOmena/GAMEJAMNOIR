@@ -11,7 +11,8 @@ public sealed class PlayerController : MonoBehaviour
 
     private Animator _animator;
     private Vector2 _moveDirection;
-    private Vector2 _mousePosition;
+    private Vector2 _shootDirection;
+    private Vector2 _lastLookDirection = Vector2.down;
     private bool _isShooting;
 
     public bool IsShooting => _isShooting;
@@ -19,7 +20,6 @@ public sealed class PlayerController : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-
         if (rb == null) rb = GetComponent<Rigidbody2D>();
     }
 
@@ -32,22 +32,44 @@ public sealed class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
-        RotateTowardsMouse();
     }
 
     private void HandleInput()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        float moveX = 0f;
+        float moveY = 0f;
+
+        if (Input.GetKey(KeyCode.D)) moveX = 1f;
+        else if (Input.GetKey(KeyCode.A)) moveX = -1f;
+
+        if (Input.GetKey(KeyCode.W)) moveY = 1f;
+        else if (Input.GetKey(KeyCode.S)) moveY = -1f;
+
         _moveDirection = new Vector2(moveX, moveY).normalized;
 
-        if (Camera.main != null)
+        float shootX = 0f;
+        float shootY = 0f;
+
+        if (Input.GetKey(KeyCode.UpArrow)) shootY = 1f;
+        else if (Input.GetKey(KeyCode.DownArrow)) shootY = -1f;
+
+        if (Input.GetKey(KeyCode.RightArrow)) shootX = 1f;
+        else if (Input.GetKey(KeyCode.LeftArrow)) shootX = -1f;
+
+        _shootDirection = new Vector2(shootX, shootY).normalized;
+
+        if (_shootDirection.sqrMagnitude > 0.01f)
         {
-            _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _lastLookDirection = _shootDirection;
+        }
+        else if (_moveDirection.sqrMagnitude > 0.01f)
+        {
+            _lastLookDirection = _moveDirection;
         }
 
         if (weapon != null)
         {
+            weapon.SetShootDirection(_shootDirection);
             _isShooting = weapon.IsShooting;
         }
     }
@@ -57,17 +79,13 @@ public sealed class PlayerController : MonoBehaviour
         rb.linearVelocity = _moveDirection * moveSpeed;
     }
 
-    private void RotateTowardsMouse()
-    {
-        Vector2 aimDirection = _mousePosition - rb.position;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = aimAngle;
-    }
-
     private void UpdateAnimations()
     {
         bool isMoving = _moveDirection.magnitude > 0.1f;
         _animator.SetBool("isMoving", isMoving);
         _animator.SetBool("isShooting", _isShooting);
+
+        _animator.SetFloat("Horizontal", _lastLookDirection.x);
+        _animator.SetFloat("Vertical", _lastLookDirection.y);
     }
 }

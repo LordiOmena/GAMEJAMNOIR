@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: cf4bb69e7894e4fb3886a02d540b08a3
+guid: 63b4f4aa78486a04a8f2ea5106762d80
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2246263150803891798
-    second: DetectiveIdle_0
+      213: 5514712758430744413
+    second: DetectiveWalkDGUN_0
   - first:
-      213: -5471238147506384584
-    second: DetectiveIdle_1
+      213: 3221394020047266902
+    second: DetectiveWalkDGUN_1
   - first:
-      213: -5260633519267937265
-    second: DetectiveIdle_2
+      213: 8298490599891660080
+    second: DetectiveWalkDGUN_2
   - first:
-      213: 1747864554101018713
-    second: DetectiveIdle_3
+      213: 834176273788725320
+    second: DetectiveWalkDGUN_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DetectiveIdle_0
+      name: DetectiveWalkDGUN_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 65637b73f645c2f10800000000000000
-      internalID: 2246263150803891798
+      spriteID: d5f349c1902388c40800000000000000
+      internalID: 5514712758430744413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveIdle_1
+      name: DetectiveWalkDGUN_1
       rect:
         serializedVersion: 2
         x: 24
@@ -146,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 831d05884e14214b0800000000000000
-      internalID: -5471238147506384584
+      spriteID: 6542c762bc0b4bc20800000000000000
+      internalID: 3221394020047266902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveIdle_2
+      name: DetectiveWalkDGUN_2
       rect:
         serializedVersion: 2
         x: 0
@@ -168,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f04858eafa97ef6b0800000000000000
-      internalID: -5260633519267937265
+      spriteID: 03de57abb392a2370800000000000000
+      internalID: 8298490599891660080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveIdle_3
+      name: DetectiveWalkDGUN_3
       rect:
         serializedVersion: 2
         x: 24
@@ -190,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95010b62d89a14810800000000000000
-      internalID: 1747864554101018713
+      spriteID: 8486c3fb6e6939b00800000000000000
+      internalID: 834176273788725320
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7c39fec2f5b82b8409d8f249aef658f0
+    spriteID: d9e62bea52ec9f64290ad49a23c181b1
     internalID: 0
     vertices: []
     indices: 
@@ -212,10 +212,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":24.0,"y":24.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      DetectiveIdle_0: 2246263150803891798
-      DetectiveIdle_1: -5471238147506384584
-      DetectiveIdle_2: -5260633519267937265
-      DetectiveIdle_3: 1747864554101018713
+      DetectiveWalkDGUN_0: 5514712758430744413
+      DetectiveWalkDGUN_1: 3221394020047266902
+      DetectiveWalkDGUN_2: 8298490599891660080
+      DetectiveWalkDGUN_3: 834176273788725320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

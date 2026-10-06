@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: cf4bb69e7894e4fb3886a02d540b08a3
+guid: 83f306b64da65e24780c53296bf8eb58
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2246263150803891798
-    second: DetectiveIdle_0
+      213: -5451867384769514484
+    second: DetectiveWalkUpGUN_0
   - first:
-      213: -5471238147506384584
-    second: DetectiveIdle_1
+      213: -679765260933947965
+    second: DetectiveWalkUpGUN_1
   - first:
-      213: -5260633519267937265
-    second: DetectiveIdle_2
+      213: 4488862036937039381
+    second: DetectiveWalkUpGUN_2
   - first:
-      213: 1747864554101018713
-    second: DetectiveIdle_3
+      213: 8937944424757523096
+    second: DetectiveWalkUpGUN_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DetectiveIdle_0
+      name: DetectiveWalkUpGUN_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 65637b73f645c2f10800000000000000
-      internalID: 2246263150803891798
+      spriteID: c047640bf731754b0800000000000000
+      internalID: -5451867384769514484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveIdle_1
+      name: DetectiveWalkUpGUN_1
       rect:
         serializedVersion: 2
         x: 24
@@ -146,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 831d05884e14214b0800000000000000
-      internalID: -5471238147506384584
+      spriteID: 3cd9163c81df096f0800000000000000
+      internalID: -679765260933947965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveIdle_2
+      name: DetectiveWalkUpGUN_2
       rect:
         serializedVersion: 2
         x: 0
@@ -168,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f04858eafa97ef6b0800000000000000
-      internalID: -5260633519267937265
+      spriteID: 51e5e555d34ab4e30800000000000000
+      internalID: 4488862036937039381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveIdle_3
+      name: DetectiveWalkUpGUN_3
       rect:
         serializedVersion: 2
         x: 24
@@ -190,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95010b62d89a14810800000000000000
-      internalID: 1747864554101018713
+      spriteID: 892fadb5915f90c70800000000000000
+      internalID: 8937944424757523096
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7c39fec2f5b82b8409d8f249aef658f0
+    spriteID: dd125f31b70d5f24b9737ee52203beca
     internalID: 0
     vertices: []
     indices: 
@@ -209,13 +209,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":24.0,"y":24.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      DetectiveIdle_0: 2246263150803891798
-      DetectiveIdle_1: -5471238147506384584
-      DetectiveIdle_2: -5260633519267937265
-      DetectiveIdle_3: 1747864554101018713
+      DetectiveWalkUpGUN_0: -5451867384769514484
+      DetectiveWalkUpGUN_1: -679765260933947965
+      DetectiveWalkUpGUN_2: 4488862036937039381
+      DetectiveWalkUpGUN_3: 8937944424757523096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

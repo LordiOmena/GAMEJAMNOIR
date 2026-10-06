@@ -21,6 +21,8 @@ public sealed class Weapon : MonoBehaviour
     private float _nextFireTime;
     private bool _isReloading;
     private bool _isShooting;
+    private Vector2 _inputDirection;
+    private Vector2 _lastShootDirection = Vector2.up;
 
     public bool IsShooting => _isShooting;
     public bool IsReloading => _isReloading;
@@ -29,6 +31,15 @@ public sealed class Weapon : MonoBehaviour
     {
         _bulletAmount = maxBulletAmount;
         UpdateAmmoUI();
+    }
+
+    public void SetShootDirection(Vector2 direction)
+    {
+        _inputDirection = direction;
+        if (direction.sqrMagnitude > 0.01f)
+        {
+            _lastShootDirection = direction;
+        }
     }
 
     private void Update()
@@ -45,7 +56,7 @@ public sealed class Weapon : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButton(0))
+        if (_inputDirection.sqrMagnitude > 0.01f)
         {
             if (_bulletAmount > 0)
             {
@@ -74,12 +85,15 @@ public sealed class Weapon : MonoBehaviour
         _bulletAmount--;
         UpdateAmmoUI();
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        float bulletAngle = Mathf.Atan2(_lastShootDirection.y, _lastShootDirection.x) * Mathf.Rad2Deg - 90f;
+        Quaternion bulletRotation = Quaternion.Euler(0f, 0f, bulletAngle);
+
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, bulletRotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
         if (rb != null)
         {
-            rb.AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+            rb.AddForce(_lastShootDirection * fireForce, ForceMode2D.Impulse);
         }
     }
 
