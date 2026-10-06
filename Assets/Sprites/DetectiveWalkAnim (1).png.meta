@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: c528e3a7dc36745679d2b42d247e848c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3759170980718708106
+    second: DetectiveWalkAnim (1)_0
+  - first:
+      213: 7281056167832711084
+    second: DetectiveWalkAnim (1)_1
+  - first:
+      213: 7186400870689874998
+    second: DetectiveWalkAnim (1)_2
+  - first:
+      213: 8781616459434202029
+    second: DetectiveWalkAnim (1)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +79,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,21 +92,8 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,18 +113,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 32
-        height: 32
+        y: 230
+        width: 230
+        height: 230
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7330fa33937644f97839e795b4bad5eb
-      internalID: -790771678
+      spriteID: a8502bb07124b2430800000000000000
+      internalID: 3759170980718708106
       vertices: []
       indices: 
       edges: []
@@ -134,19 +134,20 @@ TextureImporter:
       name: DetectiveWalkAnim (1)_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
+        x: 230
+        y: 230
+        width: 230
+        height: 230
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ce1d8b080f2c749c39d386a8e4ab3e16
-      internalID: 1422247949
+      spriteID: cafe55902028b0560800000000000000
+      internalID: 7281056167832711084
       vertices: []
       indices: 
       edges: []
@@ -156,18 +157,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
+        y: 0
+        width: 230
+        height: 230
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f436984289742410d96e2465ec630e08
-      internalID: 2135504276
+      spriteID: 634270744893bb360800000000000000
+      internalID: 7186400870689874998
       vertices: []
       indices: 
       edges: []
@@ -176,82 +178,44 @@ TextureImporter:
       name: DetectiveWalkAnim (1)_3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b847b3c837f604430bbc0d0cb5237a4d
-      internalID: -408748265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DetectiveWalkAnim (1)_4
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 230
         y: 0
-        width: 32
-        height: 32
+        width: 230
+        height: 230
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 20ef148d045bb491b85026860103b681
-      internalID: 323256533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DetectiveWalkAnim (1)_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a693784e7ba464ec39eb6e9db26de2ab
-      internalID: -847169039
+      spriteID: da39c4294a19ed970800000000000000
+      internalID: 8781616459434202029
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 03a0372d785bfff4d9d43a12823aec3a
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":230.0,"y":230.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      DetectiveWalkAnim (1)_0: -790771678
-      DetectiveWalkAnim (1)_1: 1422247949
-      DetectiveWalkAnim (1)_2: 2135504276
-      DetectiveWalkAnim (1)_3: -408748265
-      DetectiveWalkAnim (1)_4: 323256533
-      DetectiveWalkAnim (1)_5: -847169039
+      DetectiveWalkAnim (1)_0: 3759170980718708106
+      DetectiveWalkAnim (1)_1: 7281056167832711084
+      DetectiveWalkAnim (1)_2: 7186400870689874998
+      DetectiveWalkAnim (1)_3: 8781616459434202029
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

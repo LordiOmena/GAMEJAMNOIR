@@ -54,11 +54,11 @@ public class EnemyMovement : MonoBehaviour
     {
         if(_targetDirection == Vector2.zero)
         {
-            _rigidbody.velocity = Vector2.zero;
+            _rigidbody.linearVelocity = Vector2.zero;
         }
         else
         {
-            _rigidbody.velocity = transform.up * _speed;
+            _rigidbody.linearVelocity = transform.up * _speed;
         }
     }
 }

@@ -2,65 +2,109 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
-public class Weapon : MonoBehaviour
+public sealed class Weapon : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-    public float fireForce = 20f;
-    public float time;
-    public float reloadTime = 20f;
-    public bool isReloading = false;
-    public float reloadingTime = 0f;
-    public int bulletAmount;
-    public int maxBulletAmount = 10;
-    public TextMeshProUGUI bulletAmountText;
+    [Header("Weapon Settings")]
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float fireForce = 20f;
+    [SerializeField] private float fireRate = 0.2f;
 
-    void Start()
+    [Header("Ammo & Reloading")]
+    [SerializeField] private int maxBulletAmount = 10;
+    [SerializeField] private float reloadTime = 2f;
+
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI bulletAmountText;
+
+    private int _bulletAmount;
+    private float _nextFireTime;
+    private bool _isReloading;
+    private bool _isShooting;
+
+    public bool IsShooting => _isShooting;
+    public bool IsReloading => _isReloading;
+
+    private void Start()
     {
-
+        _bulletAmount = maxBulletAmount;
+        UpdateAmmoUI();
     }
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            Reloaded();
-        }
-        bulletAmountText.text = bulletAmount.ToString();
 
-        if(time > reloadTime && bulletAmount > 0 && isReloading == false)
+    private void Update()
+    {
+        if (_isReloading)
         {
-            if(Input.GetMouseButton(0))
-            {   
-                
-                bulletAmount -= 1;
-                time = 0f;
-                Shoot();
+            _isShooting = false;
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && _bulletAmount < maxBulletAmount)
+        {
+            StartCoroutine(ReloadingRoutine());
+            return;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            if (_bulletAmount > 0)
+            {
+                _isShooting = true;
+
+                if (Time.time >= _nextFireTime)
+                {
+                    Shoot();
+                    _nextFireTime = Time.time + fireRate;
+                }
             }
-        }else
+            else
+            {
+                _isShooting = false;
+                StartCoroutine(ReloadingRoutine());
+            }
+        }
+        else
         {
-            time += Time.deltaTime;
+            _isShooting = false;
         }
     }
-    void Shoot()
+
+    private void Shoot()
     {
+        _bulletAmount--;
+        UpdateAmmoUI();
+
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+
+        if (rb != null)
+        {
+            rb.AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+        }
     }
 
-    IEnumerator ReloadingRoutine()
+    private IEnumerator ReloadingRoutine()
     {
-        isReloading = true;
+        _isReloading = true;
+        _isShooting = false;
 
-        yield return new WaitForSeconds(reloadingTime);
+        if (bulletAmountText != null)
+        {
+            bulletAmountText.text = "Reloading...";
+        }
 
-        isReloading = false;
+        yield return new WaitForSeconds(reloadTime);
+
+        _bulletAmount = maxBulletAmount;
+        UpdateAmmoUI();
+        _isReloading = false;
     }
-    public void Reloaded()
+
+    private void UpdateAmmoUI()
     {
-        StartCoroutine(ReloadingRoutine());
-        bulletAmount = maxBulletAmount;
-        bulletAmountText.text = bulletAmount.ToString();
+        if (bulletAmountText != null)
+        {
+            bulletAmountText.text = $"{_bulletAmount} / {maxBulletAmount}";
+        }
     }
-
 }

@@ -1,36 +1,73 @@
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public sealed class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    public Weapon weapon;
+    [Header("Movement Settings")]
+    [SerializeField] private float moveSpeed = 5f;
 
-    Vector2 moveDirection;
-    Vector2 mousePosition;
-    // Start is called before the first frame update
-    void Start()
+    [Header("References")]
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Weapon weapon;
+
+    private Animator _animator;
+    private Vector2 _moveDirection;
+    private Vector2 _mousePosition;
+    private bool _isShooting;
+
+    public bool IsShooting => _isShooting;
+
+    private void Awake()
     {
-        
+        _animator = GetComponent<Animator>();
+
+        if (rb == null) rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
+    {
+        HandleInput();
+        UpdateAnimations();
+    }
+
+    private void FixedUpdate()
+    {
+        MovePlayer();
+        RotateTowardsMouse();
+    }
+
+    private void HandleInput()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+        _moveDirection = new Vector2(moveX, moveY).normalized;
 
+        if (Camera.main != null)
+        {
+            _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
 
-        moveDirection = new Vector2(moveX, moveY).normalized;
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (weapon != null)
+        {
+            _isShooting = weapon.IsShooting;
+        }
     }
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
 
-        Vector2 aimDirection = mousePosition - rb.position;
+    private void MovePlayer()
+    {
+        rb.linearVelocity = _moveDirection * moveSpeed;
+    }
+
+    private void RotateTowardsMouse()
+    {
+        Vector2 aimDirection = _mousePosition - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = aimAngle;
+    }
+
+    private void UpdateAnimations()
+    {
+        bool isMoving = _moveDirection.magnitude > 0.1f;
+        _animator.SetBool("isMoving", isMoving);
+        _animator.SetBool("isShooting", _isShooting);
     }
 }
